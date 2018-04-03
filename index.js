@@ -10,9 +10,15 @@ elements.use(validateSignature);
 elements.use(function(req, res, next){
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
-})
+});
 
-elements.get('/elements', function(req, res){
+elements.get('/', function(req, res){
+    res.send({
+        success: true
+    });
+});
+
+elements.get('/dashboard.json', function(req, res){
     res.send('This is Elements!');
 });
 
