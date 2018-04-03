@@ -9,7 +9,7 @@ elements.use(function(req, res, next){
 })
 
 elements.get('/', function(req, res){
-    elementsres.send('This is Elements!');
+    res.send('This is Elements!');
 });
 
 elements.listen(app.elements.port, () => console.log('API listening on port ' + app.elements.port))
