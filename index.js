@@ -51,7 +51,8 @@ function validateSignature(req, res, next){
     }else{
         res.send({
             success: false,
-            error: 'MISSING_ARGS'
+            error: 'MISSING_ARGS',
+            portal: 'elements'
         });
     }
 }
