@@ -12,7 +12,7 @@ elements.use(function(req, res, next){
     next();
 })
 
-elements.get('/', function(req, res){
+elements.get('/elements', function(req, res){
     res.send('This is Elements!');
 });
 
