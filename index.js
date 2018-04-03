@@ -18,18 +18,6 @@ elements.get('/elements', function(req, res){
 
 elements.listen(app.elements.port, () => console.log('API listening on port ' + app.elements.port))
 
-function createSignature(expire, key){
-    var rand = 'ThisIsTheString';
-
-    var hash = md5(JSON.stringify({
-        rand: rand,
-        expire: expire,
-        secret: keyPairs[key],
-    }));
-
-    return '&rand=' + rand + '&expire=' + expire + '&key=' + key + '&hash=' + hash;
-}
-
 function validateSignature(req, res, next){
     if(
         (req.query.rand) && (req.query.expire) && (req.query.hash)
