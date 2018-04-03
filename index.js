@@ -5,7 +5,7 @@ var app = require('./../app.json');
 
 var md5 = require('md5');
 
-api.use(validateSignature);
+elements.use(validateSignature);
 
 elements.use(function(req, res, next){
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -16,7 +16,7 @@ elements.get('/elements', function(req, res){
     res.send('This is Elements!');
 });
 
-elements.listen(app.elements.port, () => console.log('API listening on port ' + app.elements.port))
+elements.listen(app.elements.port, () => console.log('Elements listening on port ' + app.elements.port))
 
 function validateSignature(req, res, next){
     if(
