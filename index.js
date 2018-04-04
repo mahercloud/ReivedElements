@@ -19,7 +19,9 @@ elements.get('/', function(req, res){
 });
 
 elements.get('/dashboard.json', function(req, res){
-    res.send('This is Elements!');
+    res.send({
+        success: true
+    });
 });
 
 elements.listen(app.elements.port, () => console.log('Elements listening on port ' + app.elements.port))
