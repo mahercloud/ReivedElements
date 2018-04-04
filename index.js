@@ -18,6 +18,13 @@ elements.get('/', function(req, res){
     });
 });
 
+api.get('/whoami', function(req, res){
+    res.send({
+        success: true,
+        whoami: 'elements'
+    });
+});
+
 elements.get('/dashboard.json', function(req, res){
     res.send({
         success: true
